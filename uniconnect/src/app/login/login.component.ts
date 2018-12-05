@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
+import {MatSnackBar} from "@angular/material";
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  public username;
+  public password;
+
+  constructor(
+    private router: Router, // page routing system - navigation (after correcet credentials for login -> home)
+    public snackBar: MatSnackBar // pop-ups in current page ( login successfull )
+  ) {
+  }
 
   ngOnInit() {
+    this.username = ''; // init inputs - empty strings
+    this.password = '';
   }
+
+  login() {
+    if (this.username === 'admin' && this.password === 'admin') {
+      this.openSnackBar('Login successfull!', '');
+    } else {
+      this.openSnackBar('Wrong username or password', '');
+    }
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+      direction: 'ltr',
+      horizontalPosition: 'end',
+      verticalPosition: 'bottom'
+    });
+  }
+
 
 }

@@ -5,6 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import {CommonModule} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSnackBarModule} from "@angular/material";
+
 
 @NgModule({
   declarations: [
@@ -14,7 +20,17 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    FormsModule,
+    CommonModule,
+    HttpClientModule,
+    AppRoutingModule,
+
+    MatInputModule,
+    MatFormFieldModule,
+    MatSnackBarModule,
+    MatButtonModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
