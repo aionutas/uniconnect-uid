@@ -53,6 +53,7 @@ img {
 
 .sidenav-menu {
   width: 300px;
+  border-radius: 12px;
 }
 
 .mat-tab-group {
@@ -67,4 +68,8 @@ img {
 .example-button-row button,
 .example-button-row a {
   margin-right: 8px;
+}
+
+.course-package {
+  display: flex;
 }
