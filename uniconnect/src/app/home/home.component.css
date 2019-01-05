@@ -1,0 +1,75 @@
+.example-container {
+  width: 1360px;
+  height: 1300px;
+  background: #eee;
+}
+
+.side-navs{
+  width: 600px;
+  height: 100px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+mat-icon{
+  margin-top: 15px;
+  align-content: end;
+}
+p {
+  margin-top: 15px;
+}
+
+img {
+  width: 100px;
+  height: 50px;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row{
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 16px;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.column[_ngcontent-c1]{
+  background-color: whitesmoke;
+}
+
+.sidenav-menu {
+  width: 300px;
+  border-radius: 12px;
+}
+
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+
+#calendarimg {
+  width: 200px;
+  height: 200px;
+}
+
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+
+.course-package {
+  display: flex;
+}

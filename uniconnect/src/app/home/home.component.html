@@ -1,3 +1,95 @@
-<p>
-  home works!
-</p>
+<div class="example-container">
+  <div class='row'>
+    <div class='column'>
+      <mat-toolbar><img src="../../assets/logo.png" alt=""></mat-toolbar>
+    </div>
+    <div class="column">
+      <mat-icon matBadge="15" matBadgeColor="warn">date_range</mat-icon>
+      <mat-icon matBadge="7" matBadgeColor="warn">question_answer</mat-icon>
+      <p>Admin</p>
+      <mat-icon matBadgeColor="warn">play_arrow</mat-icon>
+    </div>
+  </div>
+  <div class="example-button-row" align="right">
+    <button mat-stroked-button>Docs</button>
+    <button mat-stroked-button>Quotes</button>
+    <button mat-stroked-button>Events</button>
+    <button mat-stroked-button>Timer</button>
+    <button mat-stroked-button>Groups</button>
+    <a mat-stroked-button routerLink=".">Surveys</a>
+    <button mat-stroked-button>Settings</button>
+  </div>
+<div class="side-navs">
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav class="sidenav-menu" opened mode="side">
+      <button mat-button [matMenuTriggerFor]="animals">Menu</button>
+
+      <mat-menu #animals="matMenu">
+        <button mat-menu-item >Site Home</button>
+        <button mat-menu-item >Resources</button>
+        <button mat-menu-item [matMenuTriggerFor]="mycourses">My Courses</button>
+      </mat-menu>
+
+      <mat-menu #mycourses="matMenu">
+        <button mat-menu-item>User Interface Design</button>
+        <button mat-menu-item>Parallel and Distributed Computing</button>
+        <button mat-menu-item>Translators Design</button>
+        <button mat-menu-item>Distributed Systems</button>
+        <button mat-menu-item>Computer Networks</button>
+        <button mat-menu-item>Pattern Recognition Computing</button>
+      </mat-menu>
+
+      <mat-menu #amphibians="matMenu">
+        <button mat-menu-item>Sonoran desert toad</button>
+        <button mat-menu-item>Western toad</button>
+        <button mat-menu-item>Arroyo toad</button>
+        <button mat-menu-item>Yosemite toad</button>
+      </mat-menu>
+
+      <mat-menu #reptiles="matMenu">
+        <button mat-menu-item>Banded Day Gecko</button>
+        <button mat-menu-item>Banded Gila Monster</button>
+        <button mat-menu-item>Black Tree Monitor</button>
+        <button mat-menu-item>Blue Spiny Lizard</button>
+        <button mat-menu-item disabled>Velociraptor</button>
+      </mat-menu>
+    </mat-sidenav>
+    <mat-sidenav opened mode="side" position="end">
+      <img id='calendarimg' src="../../assets/calendar.png" alt="">
+    </mat-sidenav>
+    <div class="middle-div">
+      <h3>Course Overview</h3>
+      <mat-tab-group animationDuration="0ms">
+        <mat-tab label="Favorites">
+          <div class="course-package">
+            <mat-icon matBadgeColor="warn">star</mat-icon>
+            <p>Parallel and Distributed Computing</p>
+          </div>
+          <div class="course-package">
+            <mat-icon matBadgeColor="warn">star</mat-icon>
+            <p>User Interface Design</p>
+          </div>
+          <div class="course-package">
+            <mat-icon matBadgeColor="warn">star</mat-icon>
+            <p>Translators Design</p>
+          </div>
+        </mat-tab>
+        <mat-tab label="Courses">
+          <div class="course-package">
+            <mat-icon matBadgeColor="warn">star_border</mat-icon>
+            <p>Distributed Systems</p>
+          </div>
+          <div class="course-package">
+            <mat-icon matBadgeColor="warn">star_border</mat-icon>
+            <p>Pattern Recognition Computing</p>
+          </div>
+          <div class="course-package">
+            <mat-icon matBadgeColor="warn">star_border</mat-icon>
+            <p>Marketing</p>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </mat-sidenav-container>
+</div>
+</div>
