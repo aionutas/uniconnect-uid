@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,27 @@ import {Router} from "@angular/router";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private router: Router) {}
+  showNavbar = false;
+  quotes = [];
+  username;
+  constructor(private router: Router) {
+    router.events.subscribe(val => {
+      if (val instanceof NavigationEnd) {
+        this.showNavbar = val.url.slice(1) !== 'login';
+        this.username = localStorage.getItem('username')
+      }
+    });
+  }
+
+  logout() {
+    localStorage.removeItem('username');
+    this.router.navigate(['/login']);
+  }
+
+  test(msg){
+    console.log(msg);
+  }
+
+
 
 }

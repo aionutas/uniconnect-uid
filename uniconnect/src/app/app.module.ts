@@ -9,7 +9,13 @@ import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSnackBarModule} from "@angular/material";
+import {
+  MatButtonModule, MatCardModule, MatExpansionModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatListModule,
+  MatSnackBarModule
+} from "@angular/material";
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -45,7 +51,10 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatToolbarModule,
     MatBadgeModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    MatListModule,
+    MatExpansionModule,
+    MatCardModule
 
   ],
   providers: [],
