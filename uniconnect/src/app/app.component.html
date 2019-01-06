@@ -1,3 +1,25 @@
-<main [ngStyle]="{'background-image': 'url(https://images.pexels.com/photos/7919/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)', 'background-size': 'cover', 'transition': 'background-image 2s ease-in-out'}">
-  <router-outlet></router-outlet>
+<main
+  [ngStyle]="{'background-image': 'url(https://images.pexels.com/photos/7919/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)', 'background-size': 'cover', 'transition': 'background-image 2s ease-in-out'}">
+  <nav *ngIf="showNavbar">
+    <div class='top'>
+      <img src="../../assets/logo.png">
+      <div class="aside">
+        <mat-icon matBadge="15" matBadgeColor="warn">date_range</mat-icon>
+        <mat-icon matBadge="7" matBadgeColor="warn">question_answer</mat-icon>
+        <img src="https://guyrothblum.files.wordpress.com/2014/11/guy_rothblum_square.jpg">
+        <p>{{username}}</p>
+        <span (click)="logout()">Log out</span>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="aside">
+        <button mat-button>Docs</button>
+        <button mat-button>Quotes</button>
+        <button mat-button>Events</button>
+        <button mat-button>Groups</button>
+        <button mat-button>Surveys</button>
+      </div>
+    </div>
+  </nav>
+  <router-outlet (childEvent)="test($event)"></router-outlet>
 </main>

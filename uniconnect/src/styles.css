@@ -4,7 +4,6 @@
 main {
   width: 100%;
   height: 100vh;
-  display: flex;
 }
 
 body {
@@ -27,7 +26,6 @@ app-login {
 }
 
 .title {
-
   position: absolute;
   top: 10%;
   left: 50%;
@@ -40,4 +38,12 @@ app-login {
 h1 {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   color: white;
+}
+
+.mat-expansion-panel {
+  box-shadow: none!important;
+}
+
+.mat-expansion-panel-header {
+  padding: 0 1rem!important;
 }

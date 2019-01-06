@@ -1,75 +1,81 @@
-.example-container {
-  width: 1360px;
-  height: 1300px;
-  background: #eee;
-}
-
-.side-navs{
-  width: 600px;
-  height: 100px;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.column {
-  display: flex;
-  flex-direction: row;
-  flex-basis: 100%;
+:host {
   flex: 1;
-  justify-content: flex-end;
+  /*color: #fff;*/
 }
 
-mat-icon{
-  margin-top: 15px;
-  align-content: end;
-}
-p {
-  margin-top: 15px;
-}
-
-img {
-  width: 100px;
-  height: 50px;
-}
-
-.mat-toolbar-row, .mat-toolbar-single-row{
-  display: flex;
-  box-sizing: border-box;
-  padding: 0 16px;
+.container {
+  height: 100%;
+  display: grid;
   width: 100%;
-  flex-direction: row;
+}
+
+.home {
+  grid-area: home;
+}
+
+.concentration {
+  grid-area: concentration;
+}
+
+.calendar {
+  grid-area: calendar;
+}
+
+.main {
+  grid-area: main;
+}
+
+.upcoming {
+  grid-area: upcoming;
+}
+
+.quotes {
+  grid-area: quotes;
+}
+
+.container {
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  grid-template-areas:
+    "home main main upcoming"
+    "home main main upcoming"
+    "concentration quotes quotes calendar";
+  justify-items: center;
   align-items: center;
-  white-space: nowrap;
 }
 
-.column[_ngcontent-c1]{
-  background-color: whitesmoke;
+
+mat-card {
+  height: 80%;
 }
 
-.sidenav-menu {
-  width: 300px;
-  border-radius: 12px;
-}
-
-.mat-tab-group {
-  margin-bottom: 48px;
-}
-
-#calendarimg {
-  width: 200px;
-  height: 200px;
-}
-
-.example-button-row button,
-.example-button-row a {
-  margin-right: 8px;
-}
-
-.course-package {
+.quotes.mat-card {
+  width: 20rem;
+  height: 4rem;
   display: flex;
+  flex-direction: column;
+  background: transparent;
+  color: white;
+  box-shadow: none;
+}
+
+.quotes > div:last-of-type {
+  text-align: right;
+  cursor: pointer;
+}
+
+.quotes > div:first-of-type {
+  font-weight: bold;
+  user-focus: none;
+  text-align: center;
+}
+
+.main {
+  height: 20rem;
+}
+
+home {
+  height: 24rem;
 }
