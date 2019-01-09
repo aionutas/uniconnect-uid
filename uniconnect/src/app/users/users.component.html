@@ -1,0 +1,40 @@
+<div class="user-management">
+  <h2>Manage users</h2>
+  <div class="left">
+    <div class="field">
+      <mat-label>Name</mat-label>
+      <input type="text" id="nameInput" placeholder="Name"/>
+    </div>
+    <div class="field">
+      <mat-label>Role   </mat-label>
+      <select>
+        <option value="1">STUDENT</option>
+        <option value="2">TEACHER</option>
+        <option value="3">SECRETARY</option>
+      </select>
+    </div>
+    <div class="user-list">
+      <ul class="list">
+        <li *ngFor="let user of users">
+          <div class="user-card">
+            <div class="user-card-left">
+              <img src="{{user.avatar}}"/>
+            </div>
+            <div class="user-card-right">
+              <h5>Name</h5>
+              <h6>{{user.surname}}</h6>
+              <h6>{{user.firstname}}</h6>
+              <h5>Role</h5>
+              <ul class="role-list">
+                <li id="rolelist" *ngFor="let role of user.roles">
+                  <div class="role-box">{{role===1 ? "STUDENT" : (role==2 ? "TEACHER" : "SECRETARY")}}</div>
+                </li>
+              </ul>
+              <button mat-button class="edit-button"(click)="edit(user.id)">EDIT</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

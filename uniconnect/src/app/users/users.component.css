@@ -1,0 +1,64 @@
+h2 {
+  margin-left:50px;
+  text-decoration: underline;
+  font-size: 200%;
+}
+
+h5 {
+  margin-top: 5%;
+  margin-bottom:0%;
+  font-size: 100%;
+  text-decoration: underline;
+}
+
+h6 {
+  color:whitesmoke;
+  margin: 0px;
+  font-size: 150%;
+}
+li {
+  display: inline;
+}
+
+.role-list {
+  padding-left:0px;
+}
+
+.user-card-left {
+  margin-right: 20px;
+}
+img {
+  width:150px;
+  height:150px;
+}
+
+.field {
+  padding-left: 50px;
+}
+.user-card {
+  margin: 10px;
+  padding: 10px;
+  background: rgb(255, 147, 38);
+  border: 1px solid black;
+  display: flex;
+}
+
+.role-box {
+  width: 50%;
+}
+#rolelist {
+  border: 1px solid white;
+  border-radius: 5px;
+  background: skyblue;
+  color:white;
+  padding: 5%;
+}
+
+.edit-button {
+  width: 20%;
+  height: 20%;
+  float: right;
+  border-radius: 50px;
+  color: gray;
+  background: white;
+}
