@@ -27,35 +27,27 @@
   <mat-card class="concentration"></mat-card>
 
   <mat-card class="main">
-    <h3>Course Overview</h3>
+    <h3>Parallel and Distributed Computing</h3>
     <mat-tab-group animationDuration="0ms">
-      <mat-tab label="Favorites">
-        <div class="course-package">
-          <mat-icon matBadgeColor="warn">star</mat-icon>
-          <a href="acourse"><p>Parallel and Distributed Computing</p></a>
-        </div>
-        <div class="course-package">
-          <mat-icon matBadgeColor="warn">star</mat-icon>
-          <p>User Interface Design</p>
-        </div>
-        <div class="course-package">
-          <mat-icon matBadgeColor="warn">star</mat-icon>
-          <p>Translators Design</p>
-        </div>
-      </mat-tab>
-      <mat-tab label="Courses">
-        <div class="course-package">
-          <mat-icon matBadgeColor="warn">star_border</mat-icon>
-          <p>Distributed Systems</p>
-        </div>
-        <div class="course-package">
-          <mat-icon matBadgeColor="warn">star_border</mat-icon>
-          <p>Pattern Recognition Computing</p>
-        </div>
-        <div class="course-package">
-          <mat-icon matBadgeColor="warn">star_border</mat-icon>
-          <p>Marketing</p>
-        </div>
+      <mat-tab label="Progress">
+        <button mat-button>Questions</button>
+        <button mat-button>Ask Question</button>
+        <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+          <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
+            <button mat-icon-button disabled></button>
+            {{node.filename}} : {{node.type}}
+          </mat-tree-node>
+
+          <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+            <button mat-icon-button matTreeNodeToggle
+                    [attr.aria-label]="'toggle ' + node.filename">
+              <mat-icon class="mat-icon-rtl-mirror">
+                {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+              </mat-icon>
+            </button>
+            {{node.filename}} : {{node.type}}
+          </mat-tree-node>
+        </mat-tree>
       </mat-tab>
     </mat-tab-group>
   </mat-card>

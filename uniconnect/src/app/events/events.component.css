@@ -1,0 +1,85 @@
+:host {
+  flex: 1;
+  /*color: #fff;*/
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  width: 100%;
+}
+
+.home {
+  grid-area: home;
+}
+
+.concentration {
+  grid-area: concentration;
+}
+
+.calendar {
+  grid-area: calendar;
+}
+
+.main {
+  grid-area: main;
+}
+
+.upcoming {
+  grid-area: upcoming;
+}
+
+.quotes {
+  grid-area: quotes;
+}
+
+.container {
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  grid-template-areas:
+    "home main main upcoming"
+    "home main main upcoming"
+    "concentration quotes quotes calendar";
+  justify-items: center;
+  align-items: center;
+}
+
+
+mat-card {
+  height: 80%;
+}
+
+.quotes.mat-card {
+  width: 20rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  color: white;
+  box-shadow: none;
+}
+
+.quotes > div:last-of-type {
+  text-align: right;
+  cursor: pointer;
+}
+
+.quotes > div:first-of-type {
+  font-weight: bold;
+  user-focus: none;
+  text-align: center;
+}
+
+.main {
+  height: 20rem;
+}
+
+home {
+  height: 24rem;
+}
+
+.course-package {
+  display: flex;
+}

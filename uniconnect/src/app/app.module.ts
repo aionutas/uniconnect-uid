@@ -17,11 +17,14 @@ import {
   MatSnackBarModule
 } from "@angular/material";
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTreeModule} from '@angular/material/tree';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
+import {EventsComponent} from "./events/events.component";
+import {ACourseComponent} from "./aCourse/acourse.component";
 
 
 
@@ -32,7 +35,9 @@ import {MatTabsModule} from '@angular/material/tabs';
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    EventsComponent,
+    ACourseComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatTabsModule,
     MatListModule,
     MatExpansionModule,
-    MatCardModule
+    MatCardModule,
+    MatTreeModule
 
   ],
   providers: [],
