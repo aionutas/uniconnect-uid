@@ -4,6 +4,7 @@ import {LoginComponent} from "./login/login.component";
 import {HomeComponent} from "./home/home.component";
 import {EventsComponent} from "./events/events.component";
 import {ACourseComponent} from "./aCourse/acourse.component";
+import {AskQuestionComponent} from "./askQuestion/askquestion.component";
 import {SurveyComponent} from "./survey/survey.component";
 import {DriveComponent} from "./drive/drive.component";
 import {CalendarComponent} from "./calendar/calendar.component";
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'events', component: EventsComponent},
   {path: 'acourse', component: ACourseComponent},
+  {path: 'askquestions', component: AskQuestionComponent},
   {path: 'survey', component: SurveyComponent},
   {path: 'drive', component: DriveComponent},
   {path: 'calendar', component: CalendarComponent},
