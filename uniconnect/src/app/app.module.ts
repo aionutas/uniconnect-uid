@@ -29,6 +29,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { ResourcesComponent } from './resources/resources.component';
 import {EventsComponent} from "./events/events.component";
 import {ACourseComponent} from "./aCourse/acourse.component";
+import {AskQuestionComponent} from "./askQuestion/askquestion.component";
 
 
 
@@ -46,7 +47,9 @@ import {ACourseComponent} from "./aCourse/acourse.component";
     ResourcesComponent,
     HomeComponent,
     EventsComponent,
-    ACourseComponent
+    ACourseComponent,
+    AskQuestionComponent
+
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,6 @@ import {ACourseComponent} from "./aCourse/acourse.component";
     CommonModule,
     HttpClientModule,
     AppRoutingModule,
-
     MatInputModule,
     MatFormFieldModule,
     MatSnackBarModule,
