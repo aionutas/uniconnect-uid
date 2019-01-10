@@ -13,7 +13,7 @@ import {
   MatButtonModule, MatCardModule, MatExpansionModule,
   MatFormFieldModule,
   MatInputModule,
-  MatListModule,
+  MatListModule, MatOptionModule, MatSelectModule,
   MatSnackBarModule
 } from "@angular/material";
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -30,11 +30,6 @@ import { ResourcesComponent } from './resources/resources.component';
 import {EventsComponent} from "./events/events.component";
 import {ACourseComponent} from "./aCourse/acourse.component";
 import {AskQuestionComponent} from "./askQuestion/askquestion.component";
-
-
-
-
-
 
 @NgModule({
   declarations: [
@@ -71,8 +66,11 @@ import {AskQuestionComponent} from "./askQuestion/askquestion.component";
     MatListModule,
     MatExpansionModule,
     MatCardModule,
-    MatTreeModule
-
+    MatTreeModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

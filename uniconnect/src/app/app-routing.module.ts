@@ -5,6 +5,10 @@ import {HomeComponent} from "./home/home.component";
 import {EventsComponent} from "./events/events.component";
 import {ACourseComponent} from "./aCourse/acourse.component";
 import {AskQuestionComponent} from "./askQuestion/askquestion.component";
+import {SurveyComponent} from "./survey/survey.component";
+import {DriveComponent} from "./drive/drive.component";
+import {CalendarComponent} from "./calendar/calendar.component";
+import {ResourcesComponent} from "./resources/resources.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -12,7 +16,12 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'events', component: EventsComponent},
   {path: 'acourse', component: ACourseComponent},
-  {path: 'askquestions', component: AskQuestionComponent}];
+  {path: 'askquestions', component: AskQuestionComponent},
+  {path: 'survey', component: SurveyComponent},
+  {path: 'drive', component: DriveComponent},
+  {path: 'calendar', component: CalendarComponent},
+  {path: 'resources', component: ResourcesComponent},
+];
 
 @NgModule({
   imports :[
