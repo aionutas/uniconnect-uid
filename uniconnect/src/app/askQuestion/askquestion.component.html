@@ -29,26 +29,19 @@
   <mat-card class="main">
     <h3>Parallel and Distributed Computing</h3>
     <mat-tab-group animationDuration="0ms">
-      <mat-tab label="Progress">
-        <a href="questions"><button mat-button>Questions</button></a>
-        <a href="askquestions"><button mat-button>Ask Question</button></a>
-        <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
-          <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
-            <button mat-icon-button disabled></button>
-            {{node.filename}} : {{node.type}}
-          </mat-tree-node>
+     <mat-tab label="Ask Question">
+       <div class="example-container">
+         <mat-form-field>
+           <input matInput placeholder="Subject">
+         </mat-form-field>
 
-          <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
-            <button mat-icon-button matTreeNodeToggle
-                    [attr.aria-label]="'toggle ' + node.filename">
-              <mat-icon class="mat-icon-rtl-mirror">
-                {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-              </mat-icon>
-            </button>
-            {{node.filename}} : {{node.type}}
-          </mat-tree-node>
-        </mat-tree>
-      </mat-tab>
+         <mat-form-field>
+           <textarea matInput placeholder="Description"></textarea>
+         </mat-form-field>
+         <button mat-button>Submit</button>
+       </div>
+
+     </mat-tab>
     </mat-tab-group>
   </mat-card>
 
