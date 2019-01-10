@@ -23,6 +23,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
+import { SurveyComponent } from './survey/survey.component';
+import { DriveComponent } from './drive/drive.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { ResourcesComponent } from './resources/resources.component';
 import {EventsComponent} from "./events/events.component";
 import {ACourseComponent} from "./aCourse/acourse.component";
 
@@ -35,6 +39,11 @@ import {ACourseComponent} from "./aCourse/acourse.component";
   declarations: [
     AppComponent,
     LoginComponent,
+    HomeComponent,
+    SurveyComponent,
+    DriveComponent,
+    CalendarComponent,
+    ResourcesComponent,
     HomeComponent,
     EventsComponent,
     ACourseComponent
