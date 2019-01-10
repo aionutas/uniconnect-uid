@@ -1,3 +1,28 @@
-<p>
-  survey works!
-</p>
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Insert Question">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Insert the number of answers">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Choose type of answer">
+      <mat-option value="plain_text">plain text</mat-option>
+      <mat-option value="multiple_choice">multiple choice</mat-option>
+      <mat-option value="infix_answers">infix answers</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="display">
+    <mat-select placeholder="Choose type of answer">
+      <mat-option value="plain_text">plain text</mat-option>
+      <mat-option value="multiple_choice">multiple choice</mat-option>
+      <mat-option value="infix_answers">infix answers</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</div>
+<button mat-button class="button" (click)="onConfirm()">Click me!</button>
+
