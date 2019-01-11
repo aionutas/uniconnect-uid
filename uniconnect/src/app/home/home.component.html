@@ -1,3 +1,85 @@
-<p>
-  home works!
-</p>
+<div class="container">
+
+  <mat-card class="home">
+    <h2>Menu</h2>
+    <mat-list role="list">
+      <mat-list-item role="listitem">Site home</mat-list-item>
+      <mat-list-item role="listitem">Resources</mat-list-item>
+
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              My courses
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <mat-selection-list>
+            <mat-list-option *ngFor="let course of courses">
+              {{course}}
+            </mat-list-option>
+          </mat-selection-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-list>
+  </mat-card>
+
+  <mat-card class="concentration"></mat-card>
+
+  <mat-card class="main">
+    <h3>Course Overview</h3>
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="Favorites">
+        <div class="course-package">
+          <mat-icon matBadgeColor="warn">star</mat-icon>
+          <p>Parallel and Distributed Computing</p>
+        </div>
+        <div class="course-package">
+          <mat-icon matBadgeColor="warn">star</mat-icon>
+          <p>User Interface Design</p>
+        </div>
+        <div class="course-package">
+          <mat-icon matBadgeColor="warn">star</mat-icon>
+          <p>Translators Design</p>
+        </div>
+      </mat-tab>
+      <mat-tab label="Courses">
+        <div class="course-package">
+          <mat-icon matBadgeColor="warn">star_border</mat-icon>
+          <p>Distributed Systems</p>
+        </div>
+        <div class="course-package">
+          <mat-icon matBadgeColor="warn">star_border</mat-icon>
+          <p>Pattern Recognition Computing</p>
+        </div>
+        <div class="course-package">
+          <mat-icon matBadgeColor="warn">star_border</mat-icon>
+          <p>Marketing</p>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+
+  <img id='calendarimg' src="../../assets/calendar.png" alt="">
+
+  <mat-card class="upcoming">
+    <h2>Upcoming events</h2>
+    <mat-list role="list">
+      <mat-list-item role="listitem">Deadline phase 4 User Interface design</mat-list-item>
+      <mat-list-item role="listitem">Deadline phase 4 User Interface design</mat-list-item>
+      <mat-list-item role="listitem">Deadline phase 4 User Interface design</mat-list-item>
+      <mat-list-item role="listitem">Deadline phase 4 User Interface design</mat-list-item>
+      <mat-list-item role="listitem">Deadline phase 4 User Interface design</mat-list-item>
+      <mat-list-item role="listitem">Deadline phase 4 User Interface design</mat-list-item>
+    </mat-list>
+  </mat-card>
+
+  <mat-card class="quotes">
+    <div>{{quote}}</div>
+    <div>
+      <mat-icon (click)="changeQuote()" style="padding-right: 0.5rem">refresh</mat-icon>
+      <mat-icon (click)="saveQuote(quote)">favorite_border</mat-icon>
+    </div>
+  </mat-card>
+
+</div>

@@ -24,8 +24,11 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if (this.username === 'admin' && this.password === 'admin') {
+    if (this.username === 'admin' && this.password === 'admin'
+      || this.username === 'andreea' && this.password === 'andreea') {
       this.openSnackBar('Login successfull!', '');
+      localStorage.setItem('username', this.username);
+      this.router.navigate(['/home']);
     } else {
       this.openSnackBar('Wrong username or password', '');
     }
