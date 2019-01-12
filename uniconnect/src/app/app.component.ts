@@ -13,6 +13,7 @@ export class AppComponent {
   constructor(private router: Router) {
     router.events.subscribe(val => {
       if (val instanceof NavigationEnd) {
+        console.log(val.url);
         this.showNavbar = val.url.slice(1) !== 'login';
         this.username = localStorage.getItem('username')
       }

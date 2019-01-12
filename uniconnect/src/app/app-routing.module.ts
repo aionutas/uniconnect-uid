@@ -9,6 +9,7 @@ import {SurveyComponent} from "./survey/survey.component";
 import {DriveComponent} from "./drive/drive.component";
 import {CalendarComponent} from "./calendar/calendar.component";
 import {ResourcesComponent} from "./resources/resources.component";
+import {QuotesComponent} from "./quotes/quotes.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'drive', component: DriveComponent},
   {path: 'calendar', component: CalendarComponent},
   {path: 'resources', component: ResourcesComponent},
+  {path: 'quotes', component: QuotesComponent},
 ];
 
 @NgModule({
