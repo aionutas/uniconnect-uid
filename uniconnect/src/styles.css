@@ -7,12 +7,14 @@ main {
 }
 
 body {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   min-height: 100vh;
-  height: auto;
+  height: 100%;
   margin: 0;
   background-size: cover;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 app-login {
@@ -41,9 +43,9 @@ h1 {
 }
 
 .mat-expansion-panel {
-  box-shadow: none!important;
+  box-shadow: none !important;
 }
 
 .mat-expansion-panel-header {
-  padding: 0 1rem!important;
+  padding: 0 1rem !important;
 }

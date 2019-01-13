@@ -1,28 +1,97 @@
-<div class="example-container">
-  <mat-form-field>
-    <input matInput placeholder="Insert Question">
-  </mat-form-field>
+<div class="wrapper">
+  <div class="blank">
+    <mat-card>
+      <div class="example-container">
+        <form class="form" [formGroup]="form" fxLayout="column" fxLayoutAlign="start center">
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Insert Question"
+              formControlName="question"
+              (ngModelChange)="onQuestion()"
+            />
+          </mat-form-field>
+          <mat-form-field *ngIf="showNumberOfAnswers">
+            <input
+              type="number"
+              matInput
+              placeholder="Insert the number of answers"
+              (ngModelChange)="onNumberOfAnswers()"
+              formControlName="numberOfAnswers"
+            />
+          </mat-form-field>
 
-  <mat-form-field>
-    <input matInput placeholder="Insert the number of answers">
-  </mat-form-field>
+          <mat-form-field *ngIf="showTypeOfAnswer">
+            <mat-select
+              placeholder="Choose type of answer"
+              (ngModelChange)="onTypeOfAnswer()"
+              formControlName="typeOfAnswer"
+            >
+              <mat-option value="radio">single choice</mat-option>
+              <mat-option value="checkbox">multiple choice</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </div>
 
-  <mat-form-field>
-    <mat-select placeholder="Choose type of answer">
-      <mat-option value="plain_text">plain text</mat-option>
-      <mat-option value="multiple_choice">multiple choice</mat-option>
-      <mat-option value="infix_answers">infix answers</mat-option>
-    </mat-select>
-  </mat-form-field>
+      <div *ngIf="generateAnswers">
+        <div
+          class="example-container"
+          fxLayout="row"
+          fxLayoutAlign="center center"
+          *ngFor="let answer of generateAnswers; let index = index"
+        >
+          <mat-form-field> <input #input type="text" matInput placeholder="Insert answer" /> </mat-form-field>
+          <button mat-raised-button (click)="onConfirm(answer, input, index); input.value = ''">Done!</button>
+        </div>
+      </div>
+    </mat-card>
 
-  <mat-form-field *ngIf="display">
-    <mat-select placeholder="Choose type of answer">
-      <mat-option value="plain_text">plain text</mat-option>
-      <mat-option value="multiple_choice">multiple choice</mat-option>
-      <mat-option value="infix_answers">infix answers</mat-option>
-    </mat-select>
-  </mat-form-field>
+    <mat-card *ngIf="question" style="margin-top: 16px">
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="8px">
+        <div class="question">{{ question }}</div>
+      </div>
+      <div class="answers" fxLayout="row" fxLayoutAlign="space-around center">
+        <div *ngFor="let answer of answerList">
+          <div fxLayout="row" fxLayoutAlign="space-around center">
+            <mat-checkbox *ngIf="answer.type === 'checkbox'">{{ answer.answer }}</mat-checkbox>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-around center">
+            <div>
+              <mat-radio-button *ngIf="answer.type === 'radio'"> {{ answer.answer }} </mat-radio-button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="end center">
+        <button mat-raised-button color="primary" (click)="onSaveQuestion(); form.reset()">
+          Save Question
+        </button>
+      </div>
+    </mat-card>
 
+    <div *ngIf="savedQuestions">
+      <mat-card *ngFor="let question of savedQuestions" style="margin-top: 16px">
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="8px">
+          <div class="question">{{ question.question }}</div>
+        </div>
+        <div class="answers" fxLayout="row" fxLayoutAlign="space-around center">
+          <div *ngFor="let answer of question.answerList">
+            <div fxLayout="row" fxLayoutAlign="space-around center">
+              <mat-checkbox *ngIf="answer.type === 'checkbox'">{{ answer.answer }}</mat-checkbox>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-around center">
+              <div>
+                <mat-radio-button *ngIf="answer.type === 'radio'"> {{ answer.answer }} </mat-radio-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+
+    <div style="margin-top: 16px" *ngIf="savedQuestions.length > 0" fxLayout="row" fxLayoutAlign="end center">
+      <button mat-raised-button color="primary" (click)="onSurveySubmit()">Submit Survey</button>
+    </div>
+  </div>
 </div>
-<button mat-button class="button" (click)="onConfirm()">Click me!</button>
-
