@@ -48,7 +48,7 @@
 
 
 mat-card {
-  height: 80%;
+  height: auto;
 }
 
 .quotes.mat-card {
