@@ -25,7 +25,8 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.username === 'admin' && this.password === 'admin'
-      || this.username === 'andreea' && this.password === 'andreea') {
+      || this.username === 'andreea' && this.password === 'andreea'
+      || this.username === 'secretary' && this.password === 'secretary') {
       this.openSnackBar('Login successfull!', '');
       localStorage.setItem('username', this.username);
       this.router.navigate(['/home']);

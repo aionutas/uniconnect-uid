@@ -32,11 +32,17 @@ import {EventsComponent} from './events/events.component';
 import {ACourseComponent} from './aCourse/acourse.component';
 import {AskQuestionComponent} from './askQuestion/askquestion.component';
 import {QuotesComponent} from './quotes/quotes.component';
+import { UsersComponent } from './users/users.component';
+import { GroupsComponent } from './groups/groups.component';
+import {DragDropModule} from "@angular/cdk/drag-drop";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    UsersComponent,
+    GroupsComponent,
     HomeComponent,
     SurveyComponent,
     DriveComponent,
