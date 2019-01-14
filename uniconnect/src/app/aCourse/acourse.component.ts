@@ -30,6 +30,11 @@ const TREE_DATA = JSON.stringify({
     Seminar1: 'MPI_Scatter',
     Lab1: 'MPI_Gather'
   },
+  Week2: {
+    Course1: 'MPI',
+    Seminar1: 'MPI_Scatter',
+    Lab1: 'MPI_Gather'
+  },
 });
 
 /**
