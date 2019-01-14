@@ -39,8 +39,11 @@
           </mat-tree-node>
 
           <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
-            <button mat-icon-button matTreeNodeToggle
+            <button (click) = "tick()" mat-icon-button matTreeNodeToggle
                     [attr.aria-label]="'toggle ' + node.filename">
+                          <i *ngIf="isOk" class="material-icons">
+                          done_outline
+                          </i>
               <mat-icon class="mat-icon-rtl-mirror">
                 {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
               </mat-icon>
