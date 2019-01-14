@@ -31,7 +31,7 @@
     <mat-tab-group animationDuration="0ms">
      <mat-tab label="Questions">
        <mat-list role="list">
-         <mat-list-item (click)="openDialog()" *ngFor="let course of questions">
+         <mat-list-item *ngFor="let course of questionsList">
            {{course}}
          </mat-list-item>
        </mat-list>

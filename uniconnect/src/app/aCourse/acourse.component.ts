@@ -4,6 +4,7 @@ import {FlatTreeControl} from '@angular/cdk/tree';
 import {Injectable} from '@angular/core';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 import {BehaviorSubject, Observable, of as observableOf} from 'rxjs';
+import {isBoolean} from "util";
 
 /**
  * File node data with nested structure.
@@ -87,6 +88,8 @@ export class FileDatabase {
       return accumulator.concat(node);
     }, []);
   }
+
+
 }
 
 /**
@@ -102,6 +105,7 @@ export class ACourseComponent {
   treeControl: FlatTreeControl<FileFlatNode>;
   treeFlattener: MatTreeFlattener<FileNode, FileFlatNode>;
   dataSource: MatTreeFlatDataSource<FileNode, FileFlatNode>;
+  isOk: boolean;
 
   constructor(database: FileDatabase) {
     this.treeFlattener = new MatTreeFlattener(this.transformer, this._getLevel,
@@ -123,4 +127,9 @@ export class ACourseComponent {
   private _getChildren = (node: FileNode): Observable<FileNode[]> => observableOf(node.children);
 
   hasChild = (_: number, _nodeData: FileFlatNode) => _nodeData.expandable;
+
+  tick() {
+    console.log("salut");
+    this.isOk = true;
+  }
 }

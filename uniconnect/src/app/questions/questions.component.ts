@@ -1,6 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Router} from "@angular/router";
 
+export var questions = ['JavaNullPointerException in SpringBoot','Cannot install npm on mac','Linux error on start-up docker'];
+
 @Component({
   selector: 'app-home',
   templateUrl: './questions.component.html',
@@ -11,8 +13,9 @@ export class QuestionsComponent implements OnInit {
   quotes = ['Our greatest glory is not in never falling, but in rising every time we fall',
     'Overcoming procrastination',
     'Cultivating a success mindset.'];
+  // questions = ['JavaNullPointerException in SpringBoot','Cannot install npm on mac','Linux error on start-up docker'];
   quote = '';
-  questions = ['JavaNullPointerException in SpringBoot','Cannot install npm on mac','Linux error on start-up docker']
+  questionsList;
 
   @Output() childEvent = new EventEmitter();
 
@@ -21,6 +24,7 @@ export class QuestionsComponent implements OnInit {
 
   ngOnInit() {
     this.changeQuote();
+    this.questionsList = questions;
   }
 
   changeQuote() {

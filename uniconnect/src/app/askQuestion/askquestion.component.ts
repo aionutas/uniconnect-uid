@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
 import {QuestionsComponent} from "../questions/questions.component";
 import {MatSnackBar} from "@angular/material";
+import {questions} from "../questions/questions.component";
 
 @Component({
   selector: 'app-home',
@@ -42,7 +43,7 @@ export class AskQuestionComponent implements OnInit {
 
   add() {
     this.openSnackBar('Question Sent!', '');
-    // this.sideBar.questions.push("A new question");
+    questions.push("A new question");
     this.router.navigate(['/questions']);
   }
 
