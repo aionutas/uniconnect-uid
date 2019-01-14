@@ -24,7 +24,21 @@
     </mat-list>
   </mat-card>
 
-  <mat-card class="concentration"></mat-card>
+  <mat-card class="concentration">
+    <h2>Contentration Timer</h2>
+    <div class="group">
+      <div class="timer">
+        <span><span *ngIf="hours<10">0</span>{{hours}}</span>h &nbsp;
+        <span><span *ngIf="minutes<10">0</span>{{minutes}}</span>m &nbsp;
+        <span><span *ngIf="seconds<10">0</span>{{seconds}}</span>s &nbsp;
+      </div>
+      <div class="buttons">
+        <mat-icon (click)="startTimer()">play_arrow</mat-icon>&nbsp;
+        <mat-icon (click)="pauseTimer()">pause_arrow</mat-icon>&nbsp;
+        <mat-icon (click)="restartTimer()">refresh</mat-icon>&nbsp;
+      </div>
+    </div>
+  </mat-card>
 
   <mat-card class="main">
     <h3>Course Overview</h3>
@@ -78,7 +92,7 @@
     <div>{{quote}}</div>
     <div>
       <mat-icon (click)="changeQuote()" style="padding-right: 0.5rem">refresh</mat-icon>
-      <mat-icon (click)="saveQuote(quote)">favorite_border</mat-icon>
+      <mat-icon (click)="saveQuote(quote)" class="favourite">favorite_border</mat-icon>
     </div>
   </mat-card>
 

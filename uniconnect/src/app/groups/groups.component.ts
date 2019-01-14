@@ -41,6 +41,7 @@ export class GroupsComponent implements OnInit {
   }
   closeForm() {
     this.showForm = false;
+    this.chosenUsers = [];
     this.showAddForm = false;
     this.showCreateForm = false;
   }
@@ -69,6 +70,8 @@ export class GroupsComponent implements OnInit {
     this.chosenUsers[id] = undefined;
   }
   moveAdd(id: number) {
+    if(this.displayedInGroup.includes(this.searchAddUsers[id]))
+      return;
     this.displayedInGroup.push(this.searchAddUsers[id]);
   }
   save() {
@@ -79,7 +82,7 @@ export class GroupsComponent implements OnInit {
                     '30411 - Teachers', 'Lab OOP - 30422/2', 'Lab OOP - 30441/1'];
   }
   public initializeUserList() {
-    this.users = ['Rares', 'Ana', 'Andra', 'Raul', 'Paul', 'Mihai', 'Marius', 'Andreea'];
+    this.users = ['Rares', 'Ana', 'Andra', 'Raul', 'Paul', 'Mihai', 'Marius', 'Andrei'];
   }
   public initializePosts() {
     this.posts = [];

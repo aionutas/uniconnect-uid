@@ -16,14 +16,14 @@
     <div class="user-list">
       <ul class="list">
         <li *ngFor="let user of users">
-          <div *ngIf="(user.id!==undefined)" [style.background-color]="user.id%2===0 ? 'rgb(255, 147, 38)' : 'rgb(118,215,81)'" class="user-card">
+          <div *ngIf="(user!==undefined)" [style.background-color]="user.id%2===0 ? 'rgb(255, 147, 38)' : 'rgb(118,215,81)'" class="user-card">
             <div class="user-card-left">
               <img src="{{user.avatar}}"/>
             </div>
             <div class="user-card-right">
               <h5>Name</h5>
-              <h6>{{user.surname}}</h6>
-              <h6>{{user.firstname}}</h6>
+              <h6>{{user.surname.toUpperCase()}}</h6>
+              <h6>{{user.firstname.toUpperCase()}}</h6>
               <h5>Role</h5>
               <ul class="role-list">
                 <li class="roles" *ngFor="let role of user.roles">
@@ -57,3 +57,4 @@
     <div class="err" *ngIf="!(isSecretary===undefined&&isTeacher===undefined&&isStudent==undefined)&&(!isSecretary&&!isTeacher&&!isStudent)">You must provide at least 1 role.</div>
   </div>
 </div>
+

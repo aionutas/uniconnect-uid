@@ -2,6 +2,15 @@
   flex: 1;
   /*color: #fff;*/
 }
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
 
 .container {
   height: 100%;
@@ -48,7 +57,7 @@
 
 
 mat-card {
-  height: auto;
+  height: 80%;
 }
 
 .quotes.mat-card {

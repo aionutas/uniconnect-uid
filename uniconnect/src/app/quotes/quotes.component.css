@@ -1,0 +1,12 @@
+mat-icon {
+  cursor: pointer;
+}
+
+div mat-card{
+  display: flex;
+  justify-content: space-between;
+}
+
+h2 {
+  padding-left: 1.5rem;
+}

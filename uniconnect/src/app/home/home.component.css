@@ -15,6 +15,34 @@
 
 .concentration {
   grid-area: concentration;
+  height: 100px;
+}
+
+.concentration h2 {
+  margin-bottom: 10px;
+}
+
+.concentration .timer {
+  text-align: center;
+}
+
+.concentration .buttons {
+  text-align: center;
+}
+
+.concentration .buttons mat-icon {
+  cursor: pointer;
+}
+
+.concentration .timer > span {
+  text-decoration: underline;
+}
+
+.concentration .group {
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
 .calendar {
@@ -31,33 +59,27 @@
 
 .quotes {
   grid-area: quotes;
+  user-select: none;
 }
 
+.course-package {
+  display: flex;
+}
 .container {
   grid-template-columns: auto;
   grid-template-rows: auto;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  grid-template-areas:
-    "home main main upcoming"
-    "home main main upcoming"
-    "concentration quotes quotes calendar";
+  grid-template-areas: "home main main upcoming" "home main main upcoming" "concentration quotes quotes calendar";
   justify-items: center;
   align-items: center;
 }
 
-
-mat-card {
-  height: 80%;
-}
-
 .quotes.mat-card {
   width: 20rem;
-  height: 4rem;
   display: flex;
   flex-direction: column;
   background: transparent;
-  color: white;
   box-shadow: none;
 }
 
@@ -73,9 +95,9 @@ mat-card {
 }
 
 .main {
-  height: 20rem;
+  height: auto;
 }
 
-home {
-  height: 24rem;
+.favourite:hover {
+  color: red;
 }

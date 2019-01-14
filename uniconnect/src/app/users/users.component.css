@@ -39,6 +39,12 @@ li {
   margin-right: 20px;
 }
 
+.listing {
+  padding: 0px;
+  height: 600px;
+  width: 40%;
+  margin-left: 15%;
+}
 .user-card-right {
   width: 100%;
 }
@@ -52,7 +58,7 @@ img {
 }
 .user-card {
   margin: 3px;
-  width:60%;
+  width:95%;
   padding: 10px;
   border: 1px solid black;
   display: flex;
@@ -104,7 +110,9 @@ img {
   margin-left: 12%;
 }
 .user-list {
-  width: 50%;
+  width: 35%;
+  height:600px;
+  overflow: auto;
 }
 
 .inliner {
@@ -211,3 +219,22 @@ select {
   margin-top: 5%;
 }
 
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: navajowhite;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: antiquewhite;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: antiquewhite;
+}

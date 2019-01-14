@@ -24,11 +24,15 @@ nav > .top {
   border-bottom: 1px solid black;
 }
 
+.users {
+  display: inline-block;
+}
+
 .top > .aside {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 16%;
+  width: 20%;
 }
 
 .top > .aside > img {
@@ -47,5 +51,3 @@ nav > .bottom {
   cursor: pointer;
   padding: 0.2rem;
 }
-
-

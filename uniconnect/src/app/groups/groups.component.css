@@ -22,14 +22,13 @@ h2 {
 }
 .group-box {
   cursor:pointer;
-  border: 1px solid white;
+  border: 1px solid black;
 }
 
 .group-name:hover {
-  color: black;
+  color: orangered;
 }
 .group-name {
-  color: white;
   padding-left: 20%;
   height: 120%;
 }
@@ -54,11 +53,11 @@ h2 {
   background-image: linear-gradient(rgb(255, 147, 38), rgb(118,215,81))
 }
 #create {
-  color:white;
+  color:black;
   margin-left: 7%;
   font-size: 120%;
-  background: rgb(255, 147, 38);
-  border: 4px solid rgb(118,215,81);
+  background: white;
+  border: 4px solid black;
 }
 
 .form-title {
@@ -89,7 +88,7 @@ h2 {
 
 #reloadIcon {
   margin-left: 49%;
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .form-name {
@@ -129,7 +128,7 @@ h2 {
   margin-top: 4%;
   margin-left: 20%;
   display: flex;
-  height: 170px;
+  height: 175px;
   width: 350px;
 }
 
@@ -193,9 +192,23 @@ h2 {
   z-index : 4;
   font-size: 250%;
   position:fixed;
-  left: 25%;
+  left: 32%;
   height: 50px;
   width: 300px;
+  top: 10%;
+  bottom: 0;
+  right: 0;
+}
+
+.group-img {
+  z-index : 4;
+  font-size: 250%;
+  position:fixed;
+  left: 27%;
+  border-radius: 50%;
+  border: 2px solid gray;
+  height: 100px;
+  width: 100px;
   top: 10%;
   bottom: 0;
   right: 0;
@@ -207,7 +220,7 @@ h2 {
   border: 10px solid white;
   position:fixed;
   left: 25%;
-  top: 20%;
+  top: 22%;
   bottom: 0;
   right: 0;
   overflow-y: auto;
@@ -246,10 +259,10 @@ h2 {
 }
 
 #addUser {
-  color: white;
+  color: black;
   font-size: 120%;
-  background: rgb(255, 147, 38);
-  border: 4px solid rgb(118,215,81);
+  background: white;
+  border: 4px solid black;
 }
 
 .post-icons {
@@ -307,6 +320,30 @@ select {
   background: rgb(240, 226, 15);
   margin-left: 43%;
   margin-top: 3%;
-  margin-bottom: 13%;
+  margin-bottom: 12%;
 
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: navajowhite;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: antiquewhite;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: antiquewhite;
+}
+
+.inliner-block {
+  display: inline-block;
 }

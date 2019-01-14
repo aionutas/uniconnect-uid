@@ -8,7 +8,7 @@
     <h2>Your created groups</h2>
   <ul class="group-list">
     <li class="group-item" *ngFor="let group of groups; let i=index">
-      <div (click)="openGroup()" class="group-box" [style.background-color]="i%2==0 ? 'rgb(255, 147, 38)' : 'rgb(118,215,81)'"><span class="group-name">{{group}}</span></div>
+      <div (click)="openGroup()" class="group-box" [style.background-color]="i%2==0 ? 'white' : 'black'" [style.color]="i%2==0 ? 'black' : 'white'"><span class="group-name">{{group}}</span></div>
     </li>
   </ul>
   </div>
@@ -33,7 +33,7 @@
       <div class="user-left">
         <div class="user-left-title">In group</div>
         <div cdkDropList id="list-one"  class="searched-users">
-          <div cdkDrag class="searched-user" *ngFor="let user of chosenUsers; let i=index">
+          <div class="searched-user"  *ngFor="let user of chosenUsers; let i=index">
             <div *ngIf="user">
             <div (click)="remove(i)" class="user-box"><span class="letter">{{user.charAt(0)}}</span></div>
             <span class="entire-name">{{user}}</span>
@@ -47,7 +47,7 @@
           <input matInput placeholder="Name" type="text" [(ngModel)]="searchName" (input)="onSearchChange($event.target.value)">
         </mat-form-field>
         <div cdkDropList id="list-two"  class="searched-users">
-          <div  cdkDrag class="searched-user" *ngFor="let user of searchedUsers; let i=index" >
+          <div  class="searched-user" *ngFor="let user of searchedUsers; let i=index" >
             <div *ngIf="user">
             <div (click)="move(i)" class="user-box"><span class="letter">{{user.charAt(0)}}</span></div>
             <span class="entire-name">{{user}}</span>
@@ -102,6 +102,7 @@
     <img (click)="reloadForm()" class="icon inliner" id="reloadIcon" src="https://www.conexionespsiquicas.com/Themes/PEncounters/img/refresh_icon.png" alt="https://www.conexionespsiquicas.com/Themes/PEncounters/img/refresh_icon.png"/>
    </div>
   <h5 class="group-title">30443 Students</h5>
+  <img class="group-img" src="../../assets/group-photo.png"/>
   <div class="group-posts" *ngIf="showGroup===true">
     <div  *ngFor="let post of posts;let i=index">
       <mat-card class="post">

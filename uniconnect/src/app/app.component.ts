@@ -10,9 +10,12 @@ export class AppComponent {
   showNavbar = false;
   quotes = [];
   username;
+  localStorage;
   constructor(private router: Router) {
     router.events.subscribe(val => {
       if (val instanceof NavigationEnd) {
+        this.localStorage = localStorage;
+        console.log(val.url);
         this.showNavbar = val.url.slice(1) !== 'login';
         this.username = localStorage.getItem('username')
       }
