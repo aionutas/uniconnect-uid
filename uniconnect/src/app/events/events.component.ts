@@ -12,7 +12,7 @@ export class EventsComponent implements OnInit {
     'Overcoming procrastination',
     'Cultivating a success mindset.'];
   quote = '';
-  events = ['Google Meet-Up in Cluj', 'Programming at the office', 'Accesa Openday'];
+  events = ['Google Meet-Up in Cluj  ', 'Programming at the office  ', 'Accesa Openday  '];
 
   @Output() childEvent = new EventEmitter();
 
@@ -32,8 +32,9 @@ export class EventsComponent implements OnInit {
     this.childEvent.emit(quote);
   }
 
-  remove() {
 
+  remove() {
+    this.events.splice(0,1);
   }
 
 }

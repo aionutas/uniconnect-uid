@@ -26,15 +26,10 @@ export class FileFlatNode {
  */
 const TREE_DATA = JSON.stringify({
   Week1: {
-    Course: '1',
-    Seminar: '1',
-    Lab: '1'
+    Course1: 'MPI',
+    Seminar1: 'MPI_Scatter',
+    Lab1: 'MPI_Gather'
   },
-  Week2: {
-    Course: '2',
-    Seminar: '2',
-    Lab: '2'
-  }
 });
 
 /**
