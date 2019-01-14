@@ -27,17 +27,15 @@
   <mat-card class="concentration"></mat-card>
 
   <mat-card class="main">
-    <h3>Events</h3>
+    <h3>Parallel and Distributed Computing</h3>
     <mat-tab-group animationDuration="0ms">
-      <mat-tab label="Invites">
-        <div class="course-package">
-          <mat-list role="list">
-          <mat-list-item *ngFor="let course of events">{{course}}
-            <a href="undeva"><i class="material-icons">done</i></a>
-            <a href="undeva"><i class="material-icons">delete_forever</i></a></mat-list-item>
-          </mat-list>
-        </div>
-      </mat-tab>
+     <mat-tab label="Questions">
+       <mat-list role="list">
+         <mat-list-item (click)="openDialog()" *ngFor="let course of questions">
+           {{course}}
+         </mat-list-item>
+       </mat-list>
+     </mat-tab>
     </mat-tab-group>
   </mat-card>
 

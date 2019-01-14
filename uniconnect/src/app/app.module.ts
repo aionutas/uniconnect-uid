@@ -23,6 +23,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
+import {QuestionsComponent} from "./questions/questions.component";
 import {SurveyComponent} from './survey/survey.component';
 import {DriveComponent} from './drive/drive.component';
 import {CalendarComponent} from './calendar/calendar.component';
@@ -45,6 +46,7 @@ import {QuotesComponent} from './quotes/quotes.component';
     EventsComponent,
     ACourseComponent,
     AskQuestionComponent,
+    QuestionsComponent,
     QuotesComponent
   ],
   imports: [
