@@ -3,16 +3,16 @@ import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
-  templateUrl: './events.component.html',
-  styleUrls: ['./events.component.css']
+  templateUrl: './questions.component.html',
+  styleUrls: ['./questions.component.css']
 })
-export class EventsComponent implements OnInit {
+export class QuestionsComponent implements OnInit {
   courses = ['UID', 'PDC', 'IOS'];
   quotes = ['Our greatest glory is not in never falling, but in rising every time we fall',
     'Overcoming procrastination',
     'Cultivating a success mindset.'];
   quote = '';
-  events = ['Google Meet-Up in Cluj', 'Programming at the office', 'Accesa Openday'];
+  questions = ['JavaNullPointerException in SpringBoot','Cannot install npm on mac','Linux error on start-up docker']
 
   @Output() childEvent = new EventEmitter();
 

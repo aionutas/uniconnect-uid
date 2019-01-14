@@ -30,6 +30,7 @@ import { ResourcesComponent } from './resources/resources.component';
 import {EventsComponent} from "./events/events.component";
 import {ACourseComponent} from "./aCourse/acourse.component";
 import {AskQuestionComponent} from "./askQuestion/askquestion.component";
+import {QuestionsComponent} from "./questions/questions.component";
 
 
 
@@ -48,7 +49,8 @@ import {AskQuestionComponent} from "./askQuestion/askquestion.component";
     HomeComponent,
     EventsComponent,
     ACourseComponent,
-    AskQuestionComponent
+    AskQuestionComponent,
+    QuestionsComponent
 
   ],
   imports: [
