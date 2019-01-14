@@ -20,14 +20,18 @@ export class GroupsComponent implements OnInit {
   public showGroup = false;
   public searchName;
   public groupName;
+  public description;
   public usersInGroup;
+  public displayedInGroup;
   public searchAddName;
+  public searchRole;
   public searchAddUsers;
   constructor() { }
 
   ngOnInit() {
     this.initializeGroupList();
     this.initializeUserList();
+    this.openGroup();
     this.searchedUsers = this.users;
   }
   create() {
@@ -52,8 +56,6 @@ export class GroupsComponent implements OnInit {
   onSearchAddChange($event) {
     let newUsers = [];
     for(let i=0; i<this.users.length; i++) {
-      console.log(this.users[i]);
-      console.log(this.searchAddUsers);
       if(this.users[i].toLowerCase().includes(this.searchAddName.toLowerCase())) {
         newUsers[i] = this.users[i];
       }
@@ -63,8 +65,11 @@ export class GroupsComponent implements OnInit {
   move(id: number) {
     this.chosenUsers[id] = this.users[id];
   }
+  remove(id: number) {
+    this.chosenUsers[id] = undefined;
+  }
   moveAdd(id: number) {
-    this.usersInGroup.push(this.searchAddUsers[id]);
+    this.displayedInGroup.push(this.searchAddUsers[id]);
   }
   save() {
     this.groups.push(this.groupName);
@@ -98,15 +103,31 @@ export class GroupsComponent implements OnInit {
     post.date = "Monday, January 9 20:20";
     this.posts[2] = post;
   }
+  saveUser() {
+    this.usersInGroup = this.displayedInGroup;
+  }
   openGroup() {
     this.showGroup  = true;
     this.initializePosts();
     this.usersInGroup = ['Rares', 'Ana', 'Andra', 'Raul', 'Paul', 'Mihai'];
+    this.displayedInGroup = ['Rares', 'Ana', 'Andra', 'Raul', 'Paul', 'Mihai'];
   }
   addUser() {
+    this.chosenUsers = [];
     this.searchAddUsers = this.users;
     this.showForm = true;
     this.showAddForm = true;
     this.showCreateForm = false;
+  }
+  reloadForm() {
+    if (this.showCreateForm) {
+      this.groupName = undefined;
+      this.description = undefined;
+      this.chosenUsers = [];
+    } else {
+      this.searchAddName = undefined;
+      this.searchRole = undefined;
+    }
+
   }
 }

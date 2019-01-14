@@ -1,10 +1,10 @@
 <main
-  [ngStyle]="{'background-image': 'url(https://images.pexels.com/photos/7919/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)', 'background-size': 'cover', 'transition': 'background-image 2s ease-in-out'}">
+  [ngStyle]="{'background-image': 'url(../../assets/back.jpg)', 'background-size': 'cover', 'transition': 'background-image 2s ease-in-out'}">
   <nav *ngIf="showNavbar">
     <div class='top'>
       <img src="../../assets/logo.png">
       <div class="aside">
-        <mat-icon matBadge="15" matBadgeColor="warn">date_range</mat-icon>
+        <a href="events"><mat-icon matBadge="15" matBadgeColor="warn">date_range</mat-icon></a>
         <mat-icon matBadge="7" matBadgeColor="warn">question_answer</mat-icon>
         <img src="https://guyrothblum.files.wordpress.com/2014/11/guy_rothblum_square.jpg">
         <p>{{username}}</p>
@@ -13,11 +13,12 @@
     </div>
     <div class="bottom">
       <div class="aside">
-        <button mat-button>Docs</button>
+        <a href="drive"><button mat-button>Drive</button></a>
         <button mat-button>Quotes</button>
-        <button mat-button>Events</button>
-        <button mat-button>Groups</button>
-        <button mat-button>Surveys</button>
+        <a href="events"><button mat-button>Events</button></a>
+        <a href="groups"><button mat-button>Groups</button></a>
+        <a href="survey"><button mat-button>Surveys</button></a>
+        <a href="users"><button mat-button>Manage users</button></a>
       </div>
     </div>
   </nav>

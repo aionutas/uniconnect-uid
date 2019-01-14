@@ -20,9 +20,17 @@ h2 {
   display: inline-block;
   margin: 5px;
 }
+.group-box {
+  cursor:pointer;
+  border: 1px solid white;
+}
 
+.group-name:hover {
+  color: black;
+}
 .group-name {
-  padding: 20%;
+  color: white;
+  padding-left: 20%;
   height: 120%;
 }
 .group-list {
@@ -33,7 +41,7 @@ h2 {
 }
 
 .add-group-form {
-  z-index: 2;
+  z-index: 10;
   width: 37.5%;
   height: 75%;
   border: 10px solid white;
@@ -46,6 +54,8 @@ h2 {
   background-image: linear-gradient(rgb(255, 147, 38), rgb(118,215,81))
 }
 #create {
+  color:white;
+  margin-left: 7%;
   font-size: 120%;
   background: rgb(255, 147, 38);
   border: 4px solid rgb(118,215,81);
@@ -62,8 +72,14 @@ h2 {
   display: block;
 }
 .icon {
+  cursor: pointer;
   height: 10%;
   width:10%;
+}
+
+.icon:hover {
+  height: 11%;
+  width: 11%;
 }
 
 #closeIcon {
@@ -143,11 +159,17 @@ h2 {
 }
 
 .user-box {
+  cursor: pointer;
   height: 30px;
   width: 30px;
-  background: #2b81af;
+  background-image: linear-gradient(#2b81af, white);
   border: 1px solid black;
   border-radius: 80%;
+}
+
+.user-box:hover {
+  height: 33px;
+  width: 33px;
 }
 
 .letter {
@@ -167,6 +189,17 @@ h2 {
 
 }
 
+.group-title {
+  z-index : 4;
+  font-size: 250%;
+  position:fixed;
+  left: 25%;
+  height: 50px;
+  width: 300px;
+  top: 10%;
+  bottom: 0;
+  right: 0;
+}
 .group-posts {
   background: white;
   width: 45%;
@@ -213,6 +246,7 @@ h2 {
 }
 
 #addUser {
+  color: white;
   font-size: 120%;
   background: rgb(255, 147, 38);
   border: 4px solid rgb(118,215,81);

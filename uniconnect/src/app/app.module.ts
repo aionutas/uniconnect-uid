@@ -9,16 +9,27 @@ import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MatCardModule, MatExpansionModule,
-  MatListModule,
+import {
+  MatButtonModule, MatCardModule, MatExpansionModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatListModule, MatOptionModule, MatSelectModule,
+  MatSnackBarModule
 } from "@angular/material";
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTreeModule} from '@angular/material/tree';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
-import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSnackBarModule} from "@angular/material";
+import { SurveyComponent } from './survey/survey.component';
+import { DriveComponent } from './drive/drive.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { ResourcesComponent } from './resources/resources.component';
+import {EventsComponent} from "./events/events.component";
+import {ACourseComponent} from "./aCourse/acourse.component";
+import {AskQuestionComponent} from "./askQuestion/askquestion.component";
 import { UsersComponent } from './users/users.component';
 import { GroupsComponent } from './groups/groups.component';
 import {DragDropModule} from "@angular/cdk/drag-drop";
@@ -30,7 +41,17 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
     LoginComponent,
     HomeComponent,
     UsersComponent,
-    GroupsComponent
+    GroupsComponent,
+    HomeComponent,
+    SurveyComponent,
+    DriveComponent,
+    CalendarComponent,
+    ResourcesComponent,
+    HomeComponent,
+    EventsComponent,
+    ACourseComponent,
+    AskQuestionComponent
+
   ],
   imports: [
     BrowserModule,
@@ -39,7 +60,6 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
     CommonModule,
     HttpClientModule,
     AppRoutingModule,
-
     MatInputModule,
     MatFormFieldModule,
     MatSnackBarModule,
@@ -53,7 +73,10 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
     MatListModule,
     MatExpansionModule,
     MatCardModule,
-    MatIconModule
+    MatTreeModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule,
 
   ],
   providers: [],
