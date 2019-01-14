@@ -20,7 +20,7 @@ nav > .top {
 }
 
 nav > .top {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0);
   border-bottom: 1px solid black;
 }
 
@@ -28,7 +28,7 @@ nav > .top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 16%;
+  width: 20%;
 }
 
 .top > .aside > img {
@@ -47,5 +47,3 @@ nav > .bottom {
   cursor: pointer;
   padding: 0.2rem;
 }
-
-

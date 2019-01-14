@@ -1,0 +1,4 @@
+<h2>Your saved Quotes:</h2>
+<div *ngIf="quotes.length">
+  <mat-card *ngFor="let quote of quotes"><span>{{quote}}</span> <mat-icon (click)="removeQuote(quote)">remove_circle</mat-icon> </mat-card>
+</div>
