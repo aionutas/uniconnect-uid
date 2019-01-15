@@ -1,5 +1,8 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Router} from "@angular/router";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {NavigationEnd, Router} from "@angular/router";
+import {QuestionsComponent} from "../questions/questions.component";
+import {MatSnackBar} from "@angular/material";
+import {questions} from "../questions/questions.component";
 
 @Component({
   selector: 'app-home',
@@ -13,9 +16,12 @@ export class AskQuestionComponent implements OnInit {
     'Cultivating a success mindset.'];
   quote = '';
 
+  @Input() questionsList: QuestionsComponent;
+
   @Output() childEvent = new EventEmitter();
 
-  constructor() {
+  constructor(private router: Router,public snackBar: MatSnackBar // pop-ups in current page ( login successfull )
+  ) {
   }
 
   ngOnInit() {
@@ -35,4 +41,18 @@ export class AskQuestionComponent implements OnInit {
 
   }
 
+  add() {
+    this.openSnackBar('Question Sent!', '');
+    questions.push("A new question");
+    this.router.navigate(['/questions']);
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+      direction: 'ltr',
+      horizontalPosition: 'end',
+      verticalPosition: 'bottom'
+    });
+  }
 }

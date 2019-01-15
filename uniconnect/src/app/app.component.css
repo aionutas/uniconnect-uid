@@ -24,6 +24,10 @@ nav > .top {
   border-bottom: 1px solid black;
 }
 
+.users {
+  display: inline-block;
+}
+
 .top > .aside {
   display: flex;
   justify-content: space-between;

@@ -1,0 +1,349 @@
+* {
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+h5 {
+  font-size: 150%;
+  margin-top: 2%;
+  margin-left: 3%;
+}
+h2 {
+  font-size: 100%;
+}
+.mat-form-field {
+  font-size: 60%;
+}
+.group-item {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+  margin: 5px;
+}
+.group-box {
+  cursor:pointer;
+  border: 1px solid black;
+}
+
+.group-name:hover {
+  color: orangered;
+}
+.group-name {
+  padding-left: 20%;
+  height: 120%;
+}
+.group-list {
+  padding:0px;
+}
+.group-div {
+  width: 100%;
+}
+
+.add-group-form {
+  z-index: 10;
+  width: 37.5%;
+  height: 75%;
+  border: 10px solid white;
+  border-radius: 100%;
+  position:fixed;
+  left: 30%;
+  top: 15%;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(rgb(255, 147, 38), rgb(118,215,81))
+}
+#create {
+  color:black;
+  margin-left: 7%;
+  font-size: 120%;
+  background: white;
+  border: 4px solid black;
+}
+
+.form-title {
+  font-size: 200%;
+  text-decoration: underline;
+  margin-left: 30%;
+  margin-top: 10%;
+}
+
+.inliner {
+  display: block;
+}
+.icon {
+  cursor: pointer;
+  height: 10%;
+  width:10%;
+}
+
+.icon:hover {
+  height: 11%;
+  width: 11%;
+}
+
+#closeIcon {
+  float:right;
+  margin-right: 10%;
+}
+
+#reloadIcon {
+  margin-left: 49%;
+  margin-top: 3%;
+}
+
+.form-name {
+  margin-left: 20%;
+  margin-top: 7%;
+}
+#form-name {
+  margin-left: 1%;
+  background: rgb(240, 226, 135);
+  height: 25px;
+  width: 280px;
+  border: none;
+}
+
+.form-description {
+  margin-left: 13%;
+  margin-top: 4%;
+}
+
+#form-description {
+  margin-left: 1%;
+  background: rgb(240, 226, 135);
+  height: 60px;
+  width: 280px;
+  border: none;
+}
+
+.form-upload {
+  margin-left: 19%;
+  margin-top: 4%;
+}
+
+#form-upload {
+  margin-left: 1%;
+}
+.user-pick {
+  margin-top: 4%;
+  margin-left: 20%;
+  display: flex;
+  height: 175px;
+  width: 350px;
+}
+
+.user-left, .user-right {
+  background: rgb(240, 226, 135);
+  width: 50%;
+  height: 100%;
+  border: 1px solid white;
+}
+
+.user-left-title {
+  background: rgb(118,215,81);
+  padding-left: 30%;
+}
+
+.searched-user {
+  display: inline-block;
+  margin-left: 5%;
+  margin-top: 1%;
+}
+
+.searched-users {
+  height: 100%;
+  margin:0px;
+  padding:0px;
+  overflow: hidden;
+}
+
+.user-box {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  background-image: linear-gradient(#2b81af, white);
+  border: 1px solid black;
+  border-radius: 80%;
+}
+
+.user-box:hover {
+  height: 33px;
+  width: 33px;
+}
+
+.letter {
+  margin: 9px;
+}
+
+.entire-name {
+  font-size: 70%;
+  margin-left: 2%;
+  margin-top: 0%;
+}
+
+#save {
+  background: rgb(240, 226, 15);
+  margin-left: 43%;
+  margin-top: 3%;
+
+}
+
+.group-title {
+  z-index : 4;
+  font-size: 250%;
+  position:fixed;
+  left: 32%;
+  height: 50px;
+  width: 300px;
+  top: 10%;
+  bottom: 0;
+  right: 0;
+}
+
+.group-img {
+  z-index : 4;
+  font-size: 250%;
+  position:fixed;
+  left: 27%;
+  border-radius: 50%;
+  border: 2px solid gray;
+  height: 100px;
+  width: 100px;
+  top: 10%;
+  bottom: 0;
+  right: 0;
+}
+.group-posts {
+  background: white;
+  width: 45%;
+  height: 80%;
+  border: 10px solid white;
+  position:fixed;
+  left: 25%;
+  top: 22%;
+  bottom: 0;
+  right: 0;
+  overflow-y: auto;
+}
+
+.post {
+  margin: 2%;
+  height: 50%;
+}
+.post-info {
+  margin-left: 18%;
+  display:block;
+  color:dimgray;
+}
+
+.post-question {
+  display:block;
+  font-size: 200%;
+}
+
+.card-left {
+  margin-top: 3%;
+  width: 15%;
+  margin-left: 3%;
+}
+
+.card-right {
+  background: white;
+  width: 15%;
+  height: 50%;
+  position:fixed;
+  left: 75%;
+  top: 20%;
+  bottom: 0;
+  right: 0;
+}
+
+#addUser {
+  color: black;
+  font-size: 120%;
+  background: white;
+  border: 4px solid black;
+}
+
+.post-icons {
+  float: right;
+}
+.likes, .comments {
+  display: inline-block;
+  margin: 1px;
+}
+
+.form-title-add {
+  font-size: 200%;
+  text-decoration: underline;
+  margin-left: 25%;
+  margin-top: 10%;
+}
+
+.form-subtitle-add {
+  font-size: 150%;
+  font-style: italic;
+  margin-left: 30%;
+}
+
+#nameInput {
+  border: 0.3px solid darkslategrey;
+  width: 60%;
+  background: rgb(240, 226, 135);
+  height: 20px;
+}
+
+select {
+  border: 0.3px solid darkslategrey;
+  color: darkslategrey;
+  background: rgb(240, 226, 135);
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  color: gray;
+  margin-left: 0.5%;
+  width: 60%;
+  height: 20px;
+}
+
+.field {
+  margin-left: 20%;
+}
+
+#labelRole {
+  margin-left: 2%;
+}
+#nameField {
+  margin-top: 6%;
+  margin-bottom: 4%;
+}
+
+#saveUser {
+  background: rgb(240, 226, 15);
+  margin-left: 43%;
+  margin-top: 3%;
+  margin-bottom: 12%;
+
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: navajowhite;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: antiquewhite;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: antiquewhite;
+}
+
+.inliner-block {
+  display: inline-block;
+}

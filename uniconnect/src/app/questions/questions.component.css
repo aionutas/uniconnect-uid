@@ -2,6 +2,15 @@
   flex: 1;
   /*color: #fff;*/
 }
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
 
 .container {
   height: 100%;
@@ -48,7 +57,7 @@
 
 
 mat-card {
-  height: auto;
+  height: 80%;
 }
 
 .quotes.mat-card {
@@ -61,15 +70,6 @@ mat-card {
   box-shadow: none;
 }
 
-.accept {
-  background-color: #DDFBF3;
-  border-radius: 30px;
-}
-
-.reject {
-  background-color: #DADC9B;
-  border-radius: 30px;
-}
 .quotes > div:last-of-type {
   text-align: right;
   cursor: pointer;

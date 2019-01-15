@@ -1,0 +1,60 @@
+<div class="user-management">
+  <h2>Manage users</h2>
+  <div class="left">
+   <div class="field">
+      <mat-label>Name</mat-label>
+      <input type="text" id="nameInput" placeholder="Name" [(ngModel)]="searchName" (input)="onSearchChange($event.target.value)"/>
+    </div>
+    <div class="field">
+      <mat-label>Role   </mat-label>
+      <select [(ngModel)]="searchRole" >
+        <option value="1">STUDENT</option>
+        <option value="2">TEACHER</option>
+        <option value="3">SECRETARY</option>
+      </select>
+    </div>
+    <div class="user-list">
+      <ul class="list">
+        <li *ngFor="let user of users">
+          <div *ngIf="(user!==undefined)" [style.background-color]="user.id%2===0 ? 'rgb(255, 147, 38)' : 'rgb(118,215,81)'" class="user-card">
+            <div class="user-card-left">
+              <img src="{{user.avatar}}"/>
+            </div>
+            <div class="user-card-right">
+              <h5>Name</h5>
+              <h6>{{user.surname.toUpperCase()}}</h6>
+              <h6>{{user.firstname.toUpperCase()}}</h6>
+              <h5>Role</h5>
+              <ul class="role-list">
+                <li class="roles" *ngFor="let role of user.roles">
+                  <div class="role-box"><span class="role">{{getRoleName(role)}}</span></div>
+                </li>
+              </ul>
+              <button mat-button class="edit-button"(click)="edit(user.id)">EDIT</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="right">
+  <div class="form">
+    <span class="form-title inliner">Edit user</span>
+    <span class="form-id inliner">ID: {{id}}</span>
+    <div class="form-name inliner">
+    <mat-label>Name</mat-label>
+    <input type="text" id="form-name" placeholder="Surname" [(ngModel)]="surname" [style.background]="surname!==undefined && !surname ? 'rgb(255, 81,81)': 'rgb(240, 226, 135)'" required="required"/>
+    <input type="text" id="form-firstname" placeholder="Firstname" [(ngModel)]="firstName" [style.background]="firstName!==undefined && !firstName ? 'rgb(255, 81,81)': 'rgb(240, 226, 135)'" required="required"/>
+    </div>
+    <div class="form-roles inliner">
+    <mat-label>Roles</mat-label>
+    <div class="one-role"><mat-label id="margined-student">Student</mat-label><input  minlength="4"  type="checkbox" id="checkStudent" [(ngModel)]="isStudent"></div>
+      <div class="one-role"><mat-label id="margined-teacher">Teacher </mat-label><input type="checkbox" id="checkTeacher" [(ngModel)]="isTeacher"></div>
+      <div class="one-role"> <mat-label id="margined-secretary">Secretary</mat-label><input type="checkbox" id="checkSecretary" [(ngModel)]="isSecretary"></div>
+    </div>
+    <button id="save" mat-button (click)="save()">SAVE</button>
+    <div class="err" *ngIf="!(isSecretary===undefined&&isTeacher===undefined&&isStudent==undefined)&&(!isSecretary&&!isTeacher&&!isStudent)">You must provide at least 1 role.</div>
+  </div>
+</div>
+

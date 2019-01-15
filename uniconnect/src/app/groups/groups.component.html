@@ -1,0 +1,135 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="main-container">
+  <mat-card class="card-left">
+  <div class="left">
+    <button id="create" mat-button (click)="create()">ADD NEW GROUP</button>
+  </div>
+  <div class="group-div">
+    <h2>Your created groups</h2>
+  <ul class="group-list">
+    <li class="group-item" *ngFor="let group of groups; let i=index">
+      <div (click)="openGroup()" class="group-box" [style.background-color]="i%2==0 ? 'white' : 'black'" [style.color]="i%2==0 ? 'black' : 'white'"><span class="group-name">{{group}}</span></div>
+    </li>
+  </ul>
+  </div>
+  </mat-card>
+  <div *ngIf="showForm===true" class="add-group-form">
+    <img (click)="closeForm()" class="icon" id="closeIcon" src="https://cdn2.iconfinder.com/data/icons/media-controls-5/100/close-512.png" alt="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-plain/385/010_x-512.png"/>
+   <div *ngIf="showCreateForm==true">
+    <span class="form-title inliner">Add new group</span>
+    <div class="form-name inliner">
+      <mat-label>Name</mat-label>
+      <input type="text" id="form-name" placeholder="Name" [(ngModel)]="groupName"/>
+    </div>
+    <div class="form-description inliner">
+      <mat-label>Description</mat-label>
+      <textarea  id="form-description" placeholder="Enter description here" [(ngModel)]="description"></textarea>
+    </div>
+    <div class="form-upload inliner">
+      <mat-label>Upload</mat-label>
+      <input  type="file" id="form-upload" value="UPLOAD" [(ngModel)]="image"/>
+    </div>
+    <div cdkDropListGroup class="user-pick inliner">
+      <div class="user-left">
+        <div class="user-left-title">In group</div>
+        <div cdkDropList id="list-one"  class="searched-users">
+          <div class="searched-user"  *ngFor="let user of chosenUsers; let i=index">
+            <div *ngIf="user">
+            <div (click)="remove(i)" class="user-box"><span class="letter">{{user.charAt(0)}}</span></div>
+            <span class="entire-name">{{user}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="user-right">
+        <div class="user-left-title">Members</div>
+        <mat-form-field>
+          <input matInput placeholder="Name" type="text" [(ngModel)]="searchName" (input)="onSearchChange($event.target.value)">
+        </mat-form-field>
+        <div cdkDropList id="list-two"  class="searched-users">
+          <div  class="searched-user" *ngFor="let user of searchedUsers; let i=index" >
+            <div *ngIf="user">
+            <div (click)="move(i)" class="user-box"><span class="letter">{{user.charAt(0)}}</span></div>
+            <span class="entire-name">{{user}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button id="save" mat-button (click)="save()">SAVE</button>
+   </div>
+    <div *ngIf="showAddForm==true">
+      <span class="form-title-add inliner">Add users in group</span>
+      <span class="form-subtitle-add inliner">30443 - Students</span>
+      <div class="field" id="nameField">
+        <mat-label>Name</mat-label>
+        <input type="text" id="nameInput" placeholder="Name" [(ngModel)]="searchAddName" (input)="onSearchAddChange($event.target.value)"/>
+      </div>
+      <div class="field">
+        <mat-label id="labelRole">Role</mat-label>
+        <select [(ngModel)]="searchRole" >
+          <option value="1">STUDENT</option>
+          <option value="2">TEACHER</option>
+          <option value="3">SECRETARY</option>
+        </select>
+      </div>
+      <div cdkDropListGroup class="user-pick inliner">
+        <div class="user-left">
+          <div class="user-left-title">In group</div>
+          <div cdkDropList id="list-onee"  class="searched-users">
+            <div cdkDrag class="searched-user" *ngFor="let user of displayedInGroup">
+              <div *ngIf="user">
+                <div class="user-box"><span class="letter">{{user.charAt(0)}}</span></div>
+                <span class="entire-name">{{user}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="user-right">
+          <div class="user-left-title">Members</div>
+          <div cdkDropList id="list-twoo"  class="searched-users">
+            <div  cdkDrag class="searched-user" *ngFor="let user of searchAddUsers; let i=index" >
+              <div *ngIf="user">
+                <div (click)="moveAdd(i)" class="user-box"><span class="letter">{{user.charAt(0)}}</span></div>
+                <span class="entire-name">{{user}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button id="saveUser" mat-button (click)="saveUser()">SAVE</button>
+    </div>
+    <img (click)="reloadForm()" class="icon inliner" id="reloadIcon" src="https://www.conexionespsiquicas.com/Themes/PEncounters/img/refresh_icon.png" alt="https://www.conexionespsiquicas.com/Themes/PEncounters/img/refresh_icon.png"/>
+   </div>
+  <h5 class="group-title">30443 Students</h5>
+  <img class="group-img" src="../../assets/group-photo.png"/>
+  <div class="group-posts" *ngIf="showGroup===true">
+    <div  *ngFor="let post of posts;let i=index">
+      <mat-card class="post">
+        <div class="post-info">
+          {{post.user}} posted a question on {{post.date}}
+          <mat-icon>favorite_border</mat-icon>
+        </div>
+        <div class="post-question">
+          {{post.text}}
+        </div>
+        <div class="post-icons">
+          <div class="likes">0 likes</div>
+          <div class="comments">0 comments</div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  <mat-card class="card-right">
+    <div class="left">
+      <button id="addUser" mat-button (click)="addUser()">ADD USERS TO GROUP</button>
+    </div>
+    <h2>Users in selected group</h2>
+    <div *ngFor="let user of usersInGroup; let i=index" class="inline-block">
+      <div *ngIf="user">
+        <div (click)="move(i)" class="user-box"><span class="letter">{{user.charAt(0)}}</span></div>
+        <span class="entire-name">{{user}}</span>
+      </div>
+    </div>
+  </mat-card>
+</div>
