@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Post} from "./post";
+import {MatSnackBar} from "@angular/material";
 
 @Component({
   selector: 'app-groups',
@@ -26,7 +27,7 @@ export class GroupsComponent implements OnInit {
   public searchAddName;
   public searchRole;
   public searchAddUsers;
-  constructor() { }
+  constructor(public snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.initializeGroupList();
@@ -76,6 +77,7 @@ export class GroupsComponent implements OnInit {
   }
   save() {
     this.groups.push(this.groupName);
+    this.openSnackBar('Group succesfully saved!', '');
   }
   public initializeGroupList() {
     this.groups = ['30443 - Students', 'Secretaries AC', '30441 - Students', 'Lab UID - 30444', 'Students AC', 'Secretaries - ETTI',
@@ -108,6 +110,7 @@ export class GroupsComponent implements OnInit {
   }
   saveUser() {
     this.usersInGroup = this.displayedInGroup;
+    this.openSnackBar('Members added in group!', '');
   }
   openGroup() {
     this.showGroup  = true;
@@ -131,6 +134,13 @@ export class GroupsComponent implements OnInit {
       this.searchAddName = undefined;
       this.searchRole = undefined;
     }
-
+  }
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+      direction: 'ltr',
+      horizontalPosition: 'end',
+      verticalPosition: 'bottom'
+    });
   }
 }
