@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Router} from "@angular/router";
+import {MatSnackBar} from "@angular/material";
 
 export var questions = ['JavaNullPointerException in SpringBoot','Cannot install npm on mac','Linux error on start-up docker'];
 
@@ -19,7 +20,7 @@ export class QuestionsComponent implements OnInit {
 
   @Output() childEvent = new EventEmitter();
 
-  constructor() {
+  constructor(private snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
@@ -40,4 +41,17 @@ export class QuestionsComponent implements OnInit {
 
   }
 
+  showDetails() {
+    this.openSnackBar('JavaNullPointerException in Spring Boot + \n What is commonly the purpose of this error? \n Question still in review mode ','');
+
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+      direction: 'ltr',
+      horizontalPosition: 'end',
+      verticalPosition: 'bottom'
+    });
+  }
 }

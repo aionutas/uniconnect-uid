@@ -32,27 +32,16 @@
       <mat-tab label="Progress">
         <a href="questions"><button mat-button>Questions</button></a>
         <a href="askquestions"><button mat-button>Ask Question</button></a>
-        <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
-          <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
-            <button mat-icon-button disabled></button>
-            {{node.filename}} : {{node.type}}
-          </mat-tree-node>
-
-          <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
-            <button (click) = "tick()" mat-icon-button matTreeNodeToggle
-                    [attr.aria-label]="'toggle ' + node.filename">
-                          <i *ngIf="isOk" class="material-icons">
-                          done_outline
-                          </i>
-              <mat-icon class="mat-icon-rtl-mirror">
-                {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-              </mat-icon>
-            </button>
-            {{node.filename}} : {{node.type}}
-          </mat-tree-node>
-        </mat-tree>
       </mat-tab>
     </mat-tab-group>
+    <button (click) = "tick()" mat-icon-button><i *ngIf="isOk" class="material-icons">
+      done_outline
+    </i>Seminar1</button><br>
+    <button (click) = "tick1()" mat-icon-button><i *ngIf="isOk1" class="material-icons">
+      done_outline
+    </i>Course1</button><br><button (click) = "tick2()" mat-icon-button><i *ngIf="isOk2" class="material-icons">
+    done_outline
+  </i>Lab1</button><br>
   </mat-card>
 
   <img id='calendarimg' src="../../assets/calendar.png" alt="">

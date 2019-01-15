@@ -32,7 +32,9 @@
      <mat-tab label="Questions">
        <mat-list role="list">
          <mat-list-item *ngFor="let course of questionsList">
+           <button (click)="showDetails()" mat-button color="primary">
            {{course}}
+           </button>
          </mat-list-item>
        </mat-list>
      </mat-tab>
