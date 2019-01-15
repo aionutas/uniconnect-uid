@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "./user";
+import {MatSnackBar} from "@angular/material";
 
 @Component({
   selector: 'app-users',
@@ -18,7 +19,7 @@ export class UsersComponent implements OnInit {
   public isStudent;
   public isTeacher;
   public isSecretary;
-  constructor() {
+  constructor(public snackBar: MatSnackBar) {
   }
   edit(id: number) {
     this.isSecretary = false;
@@ -69,6 +70,7 @@ export class UsersComponent implements OnInit {
     if(this.isTeacher) this.allUsers[this.id].roles.push(2);
     if(this.isSecretary) this.allUsers[this.id].roles.push(0);
     this.users[this.id] = this.allUsers[this.id];
+    this.openSnackBar('Changes successfully made!', '');
     this.onSearchChange(null);
   }
   ngOnInit() {
@@ -140,6 +142,14 @@ export class UsersComponent implements OnInit {
       return 'STUDENT';
     }
     return 'TEACHER';
+  }
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+      direction: 'ltr',
+      horizontalPosition: 'end',
+      verticalPosition: 'bottom'
+    });
   }
 }
 
