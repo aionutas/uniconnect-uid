@@ -6,13 +6,47 @@
   padding-left: 60px;
   padding-right: 60px;
 }
-
-.example-container > * {
-  width: 100%;
-}
-
 .button {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+}
+.blank {
+  flex: 1;
+  overflow: auto;
+  padding: 24px;
+  /* overflow-y: auto;
+  position: absolute;
+  margin: 0; */
+}
+.form {
+  width: 100%;
+}
+
+mat-form-field {
+  width: 100% !important;
+}
+.full-width {
+  width: 100%;
+}
+.show-answers {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.answers {
+  margin-top: 8px;
+  padding: 12px;
+}
+
+.question {
+  font-size: 24px;
+}
+.wrapper {
+  display: flex;
+  flex: 1;
+  min-height: 0px;
+}
+:host {
+  overflow: auto;
 }

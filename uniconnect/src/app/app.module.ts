@@ -7,13 +7,13 @@ import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  MatButtonModule, MatCardModule, MatExpansionModule,
+  MatButtonModule, MatCardModule, MatCheckboxModule, MatExpansionModule,
   MatFormFieldModule,
   MatInputModule,
-  MatListModule, MatOptionModule, MatSelectModule,
+  MatListModule, MatOptionModule, MatRadioModule, MatSelectModule,
   MatSnackBarModule
 } from '@angular/material';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -35,6 +35,7 @@ import {QuotesComponent} from './quotes/quotes.component';
 import { UsersComponent } from './users/users.component';
 import { GroupsComponent } from './groups/groups.component';
 import {DragDropModule} from "@angular/cdk/drag-drop";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     FormsModule,
     CommonModule,
     HttpClientModule,
@@ -79,7 +81,10 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
     MatFormFieldModule,
     MatOptionModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,32 @@
+.main-content {
+  overflow: hidden;
+  display: block;
+  overflow-y: auto;
+}
+.content {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.flex-me {
+  display: inline-flex;
+  flex-flow: row wrap;
+  background: transparent;
+}
+
+mat-card {
+  margin: 8px;
+  height: 150px;
+  width: 200px;
+}
+
+.blank {
+  height: 100%;
+}
+mat-tree {
+  background: transparent;
+}
+
+:host {
+  overflow: auto;
+}
