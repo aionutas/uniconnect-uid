@@ -31,11 +31,6 @@ const TREE_DATA = JSON.stringify({
     Seminar1: 'MPI_Scatter',
     Lab1: 'MPI_Gather'
   },
-  Week2: {
-    Course1: 'MPI',
-    Seminar1: 'MPI_Scatter',
-    Lab1: 'MPI_Gather'
-  },
 });
 
 /**
@@ -106,6 +101,8 @@ export class ACourseComponent {
   treeFlattener: MatTreeFlattener<FileNode, FileFlatNode>;
   dataSource: MatTreeFlatDataSource<FileNode, FileFlatNode>;
   isOk: boolean;
+  isOk1: boolean;
+  isOk2: boolean;
 
   constructor(database: FileDatabase) {
     this.treeFlattener = new MatTreeFlattener(this.transformer, this._getLevel,
@@ -131,5 +128,13 @@ export class ACourseComponent {
   tick() {
     console.log("salut");
     this.isOk = true;
+  }
+  tick1() {
+    console.log("salut");
+    this.isOk1 = true;
+  }
+  tick2() {
+    console.log("salut");
+    this.isOk2 = true;
   }
 }
