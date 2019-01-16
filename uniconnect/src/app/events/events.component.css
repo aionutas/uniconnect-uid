@@ -13,6 +13,11 @@
   grid-area: home;
 }
 
+#calendarimg{
+  height: 180px;
+  width: auto;
+}
+
 .concentration {
   grid-area: concentration;
 }

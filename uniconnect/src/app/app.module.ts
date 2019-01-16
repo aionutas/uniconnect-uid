@@ -23,7 +23,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
-import {QuestionsComponent} from "./questions/questions.component";
+import {QuestionsComponent} from './questions/questions.component';
 import {SurveyComponent} from './survey/survey.component';
 import {DriveComponent} from './drive/drive.component';
 import {CalendarComponent} from './calendar/calendar.component';
@@ -32,10 +32,14 @@ import {EventsComponent} from './events/events.component';
 import {ACourseComponent} from './aCourse/acourse.component';
 import {AskQuestionComponent} from './askQuestion/askquestion.component';
 import {QuotesComponent} from './quotes/quotes.component';
-import { UsersComponent } from './users/users.component';
-import { GroupsComponent } from './groups/groups.component';
-import {DragDropModule} from "@angular/cdk/drag-drop";
-import {FlexLayoutModule} from "@angular/flex-layout";
+import {UsersComponent} from './users/users.component';
+import {GroupsComponent} from './groups/groups.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {CalendarModule, DateAdapter} from 'angular-calendar';
+import {FlatpickrModule} from 'angularx-flatpickr';
+import {adapterFactory} from 'angular-calendar/date-adapters/date-fns';
+import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -84,7 +88,13 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     MatButtonModule,
     MatRadioModule,
     MatCheckboxModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),
+    FlatpickrModule.forRoot(),
+    NgbModalModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

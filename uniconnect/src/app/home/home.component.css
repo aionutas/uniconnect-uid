@@ -49,6 +49,11 @@
   grid-area: calendar;
 }
 
+#calendarimg{
+  height: 180px;
+  width: auto;
+}
+
 .main {
   grid-area: main;
 }
