@@ -2,6 +2,7 @@
   flex: 1;
   /*color: #fff;*/
 }
+
 .example-container {
   display: flex;
   flex-direction: column;
@@ -11,6 +12,10 @@
   width: 100%;
 }
 
+#calendarimg {
+  height: 180px;
+  width: auto;
+}
 
 .container {
   height: 100%;
@@ -47,10 +52,7 @@
   grid-template-rows: auto;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  grid-template-areas:
-    "home main main upcoming"
-    "home main main upcoming"
-    "concentration quotes quotes calendar";
+  grid-template-areas: "home main main upcoming" "home main main upcoming" "concentration quotes quotes calendar";
   justify-items: center;
   align-items: center;
 }

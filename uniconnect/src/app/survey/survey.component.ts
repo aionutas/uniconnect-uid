@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder } from "@angular/forms";
-import { MatSnackBar } from "@angular/material";
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormBuilder} from '@angular/forms';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
-  selector: "app-survey",
-  templateUrl: "./survey.component.html",
-  styleUrls: ["./survey.component.css"]
+  selector: 'app-survey',
+  templateUrl: './survey.component.html',
+  styleUrls: ['./survey.component.css']
 })
 export class SurveyComponent implements OnInit {
   showNumberOfAnswers = false;
@@ -15,37 +15,43 @@ export class SurveyComponent implements OnInit {
   form: FormGroup;
   questionn: string;
   savedQuestions;
+
   constructor(private formBuilder: FormBuilder, public snackBar: MatSnackBar) {
     this.form = this.formBuilder.group({
-      question: ["", ""],
-      numberOfAnswers: ["", ""],
-      typeOfAnswer: ["", ""]
+      question: ['', ''],
+      numberOfAnswers: ['', ''],
+      typeOfAnswer: ['', '']
     });
   }
+
   ngOnInit() {
     this.savedQuestions = [];
     this.showNumberOfAnswers = false;
     this.showTypeOfAnswer = false;
     this.answerList = [];
   }
+
   get question() {
-    return this.form.get("question").value;
+    return this.form.get('question').value;
   }
 
   get numberOfAnswers() {
-    return this.form.get("numberOfAnswers").value;
+    return this.form.get('numberOfAnswers').value;
   }
 
   get typeOfAnswer() {
-    return this.form.get("typeOfAnswer").value;
+    return this.form.get('typeOfAnswer').value;
   }
+
   onQuestion() {
     this.showNumberOfAnswers = true;
     this.questionn = this.question;
   }
+
   onNumberOfAnswers() {
     this.showTypeOfAnswer = true;
   }
+
   onTypeOfAnswer() {
     this.generateAnswers = [];
     let i;
@@ -53,6 +59,7 @@ export class SurveyComponent implements OnInit {
       this.generateAnswers.push(this.typeOfAnswer);
     }
   }
+
   onConfirm(type, input, index) {
     const answer = {
       type: type,
@@ -62,9 +69,11 @@ export class SurveyComponent implements OnInit {
 
     this.answerList.push(answer);
   }
+
   onShowAnswers() {
     this.generateAnswers = undefined;
   }
+
   onSaveQuestion() {
     const savedQuestions = {
       question: this.question,
@@ -74,8 +83,9 @@ export class SurveyComponent implements OnInit {
     this.generateAnswers = undefined;
     this.answerList = [];
   }
+
   onSurveySubmit() {
-    this.snackBar.open("Survey Submitted !", "", {
+    this.snackBar.open('Survey Submitted !', '', {
       duration: 2000
     });
   }
